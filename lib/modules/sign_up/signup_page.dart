@@ -99,13 +99,26 @@ class _SignUpState extends State<SignUpPage> {
                   obscureText: false,
                 ),
                 columnHight,
-                ElevatedButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      controller.signup();
-                    }
-                  },
-                  child: const Text("Sign Up"),
+                Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          controller.signup();
+                        }
+                      },
+                      child: const Text("Sign Up"),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Get.toNamed('/login');
+                      },
+                      child: const Text("Do you have user account?"),
+                    )
+                  ],
                 )
               ],
             ),
