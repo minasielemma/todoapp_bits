@@ -16,6 +16,7 @@ class LoginController extends GetxController {
     if (res.statusCode == 200) {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       prefs.setString("token", res.data["access"]);
+      Get.toNamed("/plan");
     } else {
       Get.snackbar("Error", "Login Failed");
     }

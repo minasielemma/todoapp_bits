@@ -42,7 +42,7 @@ class Plan {
     return {
       'plan_name': plan_name,
       'start_time': start_time.toIso8601String(),
-      'end_time': end_time..toIso8601String(),
+      'end_time': end_time.toIso8601String(),
     };
   }
 

@@ -38,6 +38,7 @@ dependencies:
   get: ^4.6.6
   dio: ^5.7.0
   shared_preferences: ^2.3.4
+  flutter_datetime_picker_plus: ^2.2.0
 
 dev_dependencies:
   flutter_test:
