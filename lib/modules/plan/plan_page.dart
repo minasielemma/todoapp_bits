@@ -18,14 +18,21 @@ class _PlanPageState extends State<PlanPage> {
         appBar: AppBar(
           title: Text('Plan'),
         ),
-        body: Center(
-          child: Text('Plan Page'),
-        ),
+        body: Obx(() {
+          return ListView.builder(
+            itemCount: controller.plans.length,
+            itemBuilder: (context, index) {
+              return Container(
+                child: Text(controller.plans[index].plan_name),
+              );
+            },
+          );
+        }),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             _showPlanCreateDialog(context, controller);
           },
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
       );
     });

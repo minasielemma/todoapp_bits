@@ -1,8 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:todoapp/apis/base_apis.dart';
+import 'package:todoapp/networking/network_error.dart';
 
 class LoginApis extends BaseUrl {
-  Future<Response> login(var data) async {
-    return await dio.post('/auth/token/', data: data);
+  login(var data) async {
+    try {
+      return await dio.post('/auth/token/', data: data);
+    } on DioException catch (e) {
+      NetworkError.handleError(e);
+    }
   }
 }
